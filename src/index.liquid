@@ -1,0 +1,14 @@
+---
+title: Index
+---
+
+{% for obj in blog_collections reversed %}
+  {%- assign d = obj[1] -%}
+
+  <h2>{{ d.name }}</h2>
+  <ul>
+  {%- for p in collections[d.key] %}
+    <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
+  {%- endfor %}
+  </ul>
+{%- endfor %}

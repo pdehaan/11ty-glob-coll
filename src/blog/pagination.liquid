@@ -1,0 +1,14 @@
+---
+pagination:
+  data: blog_collections
+  size: 1
+  alias: coll
+  resolve: values
+permalink: "/blog/{{ coll.name }}/"
+---
+
+<h2>{{ coll.name }}</h2>
+
+{% for p in collections[coll.key] %}
+<p><a href="{{ p.url }}">{{ p.data.title }}</a></p>
+{% endfor %}
